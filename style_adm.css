@@ -1,0 +1,100 @@
+body{
+    background-image: url('adm.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Candal', sans-serif;
+}
+
+.admin-section {
+    display: flex; /* Располагаем карточки в строке */
+    justify-content: space-between; /* Равномерно распределяем пространство */
+    gap: 20px; /* Расстояние между колонками */
+    padding: 20px;
+     /* Фон секции */
+}
+
+.admin-card {
+    flex: 1; /* Все карточки равной ширины */
+    background-color: #3B221D;
+    border: 1px solid #3B221D; /* Лёгкая граница */
+    border-radius: 10px; /* Закруглённые углы */
+    padding: 15px;
+    text-align: center; /* Центрирование содержимого */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень для объёма */
+    font-family: 'Prosto One', sans-serif;
+}
+
+.admin-photo {
+    width: 100%; /* Фото растягивается по ширине карточки */
+    height: auto; /* Сохраняем пропорции */
+    border-radius: 10px; /* Закругляем углы фото */
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-family: 'Candal', sans-serif;
+    font-size: 20px;
+    margin: 10px 0;
+    color: #c2b6b6;
+}
+
+p {
+    font-family: 'Prosto One', sans-serif;
+    font-size: 16px;
+    color: #c2b6b6;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .admin-section {
+        flex-direction: column; /* Располагаем карточки в колонку */
+        align-items: center;
+    }
+
+    .admin-card {
+        width: 90%; /* Уменьшаем ширину карточек для мобильных */
+    }
+}
+
+.return-home {
+    text-align: center; /* Центрируем кнопку */
+    margin-top: 20px; /* Отступ сверху */
+}
+
+.return-home button {
+    background-color: #3B221D; /* Цвет фона кнопки */
+    color: #c2b6b6; /* Цвет текста */
+    border: none;
+    border-radius: 5px; /* Закругленные углы */
+    padding: 10px 20px; /* Размер кнопки */
+    font-size: 25px; /* Размер текста */
+    font-family: 'Prosto One', sans-serif; /* Шрифт */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Легкая тень */
+}
+
+.return-home button:hover {
+    background-color: #684138; /* Цвет кнопки при наведении */
+    transition: background-color 0.2s ease; /* Плавное изменение цвета */
+}
+
+a{
+    color: #c2b6b6;
+}
+
+@media (max-width: 768px) {
+    /* Переключаем карточки в одну колонку */
+    .admin-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .admin-card {
+        width: 90%; /* Уменьшаем ширину карточек */
+    }
+    .return-home button {
+        font-size: 16px; /* Уменьшаем текст кнопки на главную */
+    } }
+    
+
+

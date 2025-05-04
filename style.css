@@ -1,0 +1,210 @@
+/* Центрирование всего содержимого */
+body {
+    background-image: url('./glown.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Сетка кнопок */
+.navbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Две колонки */
+    grid-template-rows: auto auto auto; /* Три строки: две строки для кнопок + одна для Telegram */
+    gap: 20px;
+    text-align: center;
+    width: 50%; /* Ширина всей секции */
+    justify-items: center; /* Центровка кнопок внутри ячеек */
+}
+
+/* Единый стиль кнопок */
+button, .telegram-button {
+    background-color: #D7D2CF;
+    color: #010000;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 20px;
+    font-size: 250%;
+    font-family: 'Candal', sans-serif;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%; /* Одинаковая ширина всех кнопок */
+}
+
+button:hover, .telegram-button:hover {
+    background-color: #A7A7A7;
+    transition: background-color 0.2s ease;
+}
+
+/* Telegram-кнопка - отдельный стиль, если нужно */
+.telegram-button {
+    grid-column: 1 / -1; /* Занимает всю строку по ширине сетки */
+}
+
+
+/* Стиль модального окна */
+.modal {
+    display: none; /* Окно по умолчанию скрыто */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Тёмный полупрозрачный фон */
+}
+
+.modal-content {
+    position: relative;
+    margin: auto;
+    top: 10%; /* Чтобы окно не выходило за верх */
+    width: 50%;
+    max-height: 80vh;
+    overflow-y: auto; /* Включаем прокрутку */
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: justify;
+    font-size: 35px; /* Крупный текст */
+    line-height: 1.7;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 25px;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+}
+
+.rules h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.rules p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.rules ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.rules ul ul {
+    list-style-type: circle;
+    margin-left: 40px;
+}
+
+.rules li {
+    margin-bottom: 15px;
+}
+
+.content input {
+    width: 80%; /* Увеличивает ширину поля ввода */
+    height: 40px; /* Увеличивает высоту поля ввода */
+    margin: 10px auto; /* Устанавливает отступы между полями */
+    font-size: 18px; /* Увеличивает размер текста внутри поля */
+    padding: 5px 10px; /* Добавляет внутренний отступ для удобства */
+    border: 2px solid #D7D2CF; /* Добавляет границу */
+    border-radius: 5px; /* Закругляет углы */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Лёгкая тень для эстетики */
+}
+
+.content input:focus {
+    border-color: #A7A7A7; /* Цвет границы при фокусе */
+    outline: none; /* Убирает стандартную рамку браузера */
+}
+
+.content button {
+    width: 50%; /* Увеличивает ширину кнопки */
+    height: 50px; /* Увеличивает высоту кнопки */
+    font-size: 20px; /* Увеличивает размер текста */
+    background-color: #D7D2CF;
+    color: #010000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
+}
+
+.content button:hover {
+    background-color: #A7A7A7;
+}
+
+/* Применяем Prosto One для заголовков */
+h1, h2, h3, h4 {
+    font-family: 'Prosto One', sans-serif;
+}
+
+/* Для основного текста */
+p, li, ul, label{
+    font-family: 'Prosto One', 'Roboto', sans-serif;
+    font-size: 30px;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px; /* Уменьшаем отступы внутри сайта */
+    }
+
+    .navbar {
+        grid-template-columns: 1fr; /* Кнопки в одну колонку */
+        gap: 15px; /* Увеличиваем расстояние между кнопками */
+        width: 90%; /* Уменьшаем ширину кнопок */
+    }
+
+    button, .telegram-button {
+        font-size: 16px; /* Уменьшаем размер текста кнопок */
+        padding: 10px 15px; /* Выровняем отступы */
+    }
+
+    .modal-content {
+        width: 90%; /* Уменьшаем ширину модального окна */
+        font-size: 18px; /* Уменьшаем размер текста для читабельности */
+    }
+
+    .admin-section {
+        flex-direction: column; /* Все карточки в один столбец */
+        align-items: center;
+    }
+
+    .admin-card {
+        width: 95%; /* Уменьшаем ширину карточек */
+        margin-bottom: 20px; /* Добавляем больше отступов между карточками */
+    }
+
+    .admin-photo {
+        width: 100%; /* Фото растягивается по ширине карточки */
+    }
+        /* Уменьшаем шрифт заголовков */
+        h1 {
+            font-size: 22px;
+        }
+        h2 {
+            font-size: 20px;
+        }
+        h3 {
+            font-size: 18px;
+        }
+        h4 {
+            font-size: 16px;
+        }
+    
+        /* Уменьшаем шрифт параграфов */
+        p, ul, li, input {
+            font-size: 14px;
+            line-height: 1.5; /* Делаем текст более компактным и читаемым */
+        }
+    
+}
+
